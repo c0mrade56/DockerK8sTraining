@@ -1,6 +1,7 @@
-FROM ubuntu:latest
-RUN apt -y update && apt -y upgrade
-RUN apt -y install openjdk-8-jdk wget
+FROM centos:latest
+RUN yum -y update && yum -y upgrade
+#RUN yum -y install openjdk-8-jdk wget
+RUN yum -y install java-1.8.0-openjdk 
 RUN mkdir /usr/local/tomcat
 RUN wget http://www-us.apache.org/dist/tomcat/tomcat-8/v8.5.51/bin/apache-tomcat-8.5.51.tar.gz -O /tmp/tomcat.tar.gz
 RUN cd /tmp && tar xvfz tomcat.tar.gz
